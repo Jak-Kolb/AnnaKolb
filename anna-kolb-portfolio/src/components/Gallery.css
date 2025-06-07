@@ -5,14 +5,23 @@
   padding: 1em 0;
 }
 
+.gallery::after {
+  content: "";
+  grid-column: 1 / -1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6ec4, #7873f5, transparent);
+  margin-top: 2em;
+}
+
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }

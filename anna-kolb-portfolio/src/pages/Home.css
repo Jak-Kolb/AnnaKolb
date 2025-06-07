@@ -1,19 +1,61 @@
+.home-page {
+  animation: fadeIn 1s ease;
+}
+
 .hero {
-  text-align: center;
-  padding: 4em 1em;
-  /* Remove the background image property as we're setting it inline */
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.hero h2 {
-  margin-bottom: 0.5em;
-  font-size: 2.5rem;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
 }
 
-.hero p {
+.overlay {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-top: 0.5em;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 3em auto;
   font-size: 1.2rem;
+  text-align: center;
+  color: #444;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
