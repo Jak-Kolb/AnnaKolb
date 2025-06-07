@@ -17,7 +17,17 @@ const artworks = [
   {
     id: 4,
     src: process.env.PUBLIC_URL + "/imgs/human.png",
-    title: "Sketch 3",
+    title: "Portrait",
+  },
+  {
+    id: 5,
+    src: process.env.PUBLIC_URL + "/imgs/img5.png",
+    title: "Untitled 5",
+  },
+  {
+    id: 6,
+    src: process.env.PUBLIC_URL + "/imgs/img6.png",
+    title: "Untitled 6",
   },
 ];
 
