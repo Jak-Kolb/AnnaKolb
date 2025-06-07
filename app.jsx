@@ -1,7 +1,7 @@
 const artworks = [
-  { id: 1, src: 'https://via.placeholder.com/600x400', title: 'Artwork 1' },
-  { id: 2, src: 'https://via.placeholder.com/600x400', title: 'Artwork 2' },
-  { id: 3, src: 'https://via.placeholder.com/600x400', title: 'Artwork 3' },
+  { id: 1, src: '/imgs/eye.png', title: 'Artwork 1' },
+  { id: 2, src: '/imgs/art2.png', title: 'Artwork 2' },
+  { id: 3, src: '/imgs/art3.png', title: 'Artwork 3' },
 ];
 
 function Gallery({ art }) {
@@ -31,5 +31,7 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Update to React 18 rendering method
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
