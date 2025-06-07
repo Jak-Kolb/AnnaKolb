@@ -1,9 +1,12 @@
 .hero {
   text-align: center;
   padding: 4em 1em;
-  background: url('/imgs/eye.png') center/cover no-repeat;
+  /* Remove the background image property as we're setting it inline */
   color: #fff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero h2 {
