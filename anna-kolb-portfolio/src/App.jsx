@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './app';
+import './App.css'; // Create this file for styling
 
 const artworks = [
-  { id: 1, src: 'imgs/eye.png', title: 'Artwork 1' },
-  { id: 2, src: 'imgs/art2.png', title: 'Artwork 2' },
-  { id: 3, src: 'imgs/art3.png', title: 'Artwork 3' },
+  { id: 1, src: '/imgs/eye.png', title: 'Artwork 1' },
+  { id: 2, src: '/imgs/art2.png', title: 'Artwork 2' },
+  { id: 3, src: '/imgs/art3.png', title: 'Artwork 3' },
 ];
 
 function Gallery({ art }) {
@@ -27,6 +26,10 @@ function App() {
       </header>
       <main>
         <Gallery art={artworks} />
+        {/* <section className="about">
+          <h2>About Me</h2>
+          <p>Welcome to my art portfolio! I am a passionate artist who loves to explore different mediums and styles. My work is inspired by nature, emotions, and the human experience.</p>
+          </section> */}
       </main>
       <footer>
         <p>&copy; 2025 Anna Kolb. All rights reserved.</p>
@@ -35,7 +38,4 @@ function App() {
   );
 }
 
-// Update to React 18 rendering method
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+export default App;
