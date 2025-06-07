@@ -5,7 +5,7 @@ import './Navbar.css';
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1 className="nav-title">Anna Kolb</h1>
+      {/* <h1 className="nav-title">Anna Kolb</h1> */}
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>

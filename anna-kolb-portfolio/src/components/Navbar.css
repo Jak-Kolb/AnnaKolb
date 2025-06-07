@@ -1,8 +1,9 @@
 .navbar {
+  position: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  /* background: linear-gradient(90deg, #ff6ec4, #7873f5); */
   padding: 1em 2em;
   color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
