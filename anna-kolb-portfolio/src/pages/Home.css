@@ -1,0 +1,16 @@
+.hero {
+  text-align: center;
+  padding: 4em 1em;
+  background: url('/imgs/eye.png') center/cover no-repeat;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+  margin-bottom: 0.5em;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
