@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  height: 70vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@
 .hero h1 {
   margin: 0;
   font-size: 4rem;
-  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  background: linear-gradient(45deg, #ff6ef8, #7873f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);

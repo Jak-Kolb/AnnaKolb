@@ -5,11 +5,11 @@ import artworks from '../data/artworks';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const heroImage = process.env.PUBLIC_URL + '/imgs/eye.png';
+  const heroImage = process.env.PUBLIC_URL + '/imgs/eye.png'; // Ensure this path is correct
 
   return (
     <div className="home-page">
-      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>   
         {/* Position the nav-links in a container for better positioning */}
         <div className="hero-nav">
           <ul className="nav-links">

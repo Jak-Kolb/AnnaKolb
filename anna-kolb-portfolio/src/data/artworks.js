@@ -1,22 +1,22 @@
 const artworks = [
   {
     id: 1,
-    src: process.env.PUBLIC_URL + "/imgs/eye.png",
+    src: process.env.PUBLIC_URL + "/imgs/try1.jpg",
     title: "Eye Study",
   },
   {
     id: 2,
-    src: process.env.PUBLIC_URL + "/imgs/art2.png",
+    src: process.env.PUBLIC_URL + "/imgs/flower.jpg",
     title: "Sketch 1",
   },
   {
     id: 3,
-    src: process.env.PUBLIC_URL + "/imgs/art3.png",
+    src: process.env.PUBLIC_URL + "/imgs/shroom.jpg",
     title: "Sketch 3",
   },
   {
     id: 4,
-    src: process.env.PUBLIC_URL + "/imgs/human.png",
+    src: process.env.PUBLIC_URL + "/imgs/wave.jpg",
     title: "Portrait",
   },
   {
