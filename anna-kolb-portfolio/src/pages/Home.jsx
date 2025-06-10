@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Gallery from '../components/Gallery';
 import artworks from '../data/artworks';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const heroImage = process.env.PUBLIC_URL + '/imgs/eye.png'; // Ensure this path is correct
+  const heroImage = process.env.PUBLIC_URL + '/imgs/eye.png';
+  const [activeTab, setActiveTab] = useState('all');
+
+  // Filter artworks based on active tab
+  const filteredArtworks = activeTab === 'all' 
+    ? artworks 
+    : artworks.filter(art => art.category === activeTab);
 
   return (
     <div className="home-page">
@@ -32,7 +38,35 @@ function Home() {
         </p>
       </section>
 
-      <Gallery art={artworks} />
+      {/* Gallery tabs */}
+      <div className="gallery-tabs">
+        <button 
+          className={activeTab === 'all' ? 'active' : ''} 
+          onClick={() => setActiveTab('all')}
+        >
+          All Artwork
+        </button>
+        <button 
+          className={activeTab === 'houses' ? 'active' : ''} 
+          onClick={() => setActiveTab('houses')}
+        >
+          House Paintings
+        </button>
+        <button 
+          className={activeTab === 'animals' ? 'active' : ''} 
+          onClick={() => setActiveTab('animals')}
+        >
+          Animals
+        </button>
+        <button 
+          className={activeTab === 'cars' ? 'active' : ''} 
+          onClick={() => setActiveTab('cars')}
+        >
+          Cars
+        </button>
+      </div>
+
+      <Gallery art={filteredArtworks} />
     </div>
   );
 }
