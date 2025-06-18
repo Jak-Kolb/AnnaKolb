@@ -6,12 +6,6 @@ const artworks = [
     category: "houses",
   },
   {
-    id: 2,
-    src: process.env.PUBLIC_URL + "/imgs/flower.jpg",
-    title: "Sketch 1",
-    category: "houses",
-  },
-  {
     id: 3,
     src: process.env.PUBLIC_URL + "/imgs/shroom.jpg",
     title: "Sketch 3",
@@ -124,6 +118,18 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/animal14.jpg",
     title: "Coastal Penguin",
     category: "animals",
+  },
+  {
+    id: 24,
+    src: process.env.PUBLIC_URL + "/imgs/abstract1.jpg",
+    title: "Rainforest Frog",
+    category: "houses",
+  },
+  {
+    id: 25,
+    src: process.env.PUBLIC_URL + "/imgs/abstract2.jpg",
+    title: "Savannah Giraffe",
+    category: "houses",
   },
 ];
 

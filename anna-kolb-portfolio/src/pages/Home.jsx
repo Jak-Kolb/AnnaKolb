@@ -5,7 +5,7 @@ import artworks from '../data/artworks';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const heroImage = process.env.PUBLIC_URL + '/imgs/eye.png';
+  const heroImage = process.env.PUBLIC_URL + '/imgs/abstract1.jpg';
   const [activeTab, setActiveTab] = useState('all');
 
   // Filter artworks based on active tab
