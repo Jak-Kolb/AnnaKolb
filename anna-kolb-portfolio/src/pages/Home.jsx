@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const heroImage = process.env.PUBLIC_URL + '/imgs/abstract1.jpg';
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState(null); // Changed from 'all' to null
 
   // Filter artworks based on active tab
-  const filteredArtworks = activeTab === 'all' 
-    ? artworks 
-    : artworks.filter(art => art.category === activeTab);
+  // Only filter if a tab is selected
+  const filteredArtworks = activeTab 
+    ? artworks.filter(art => art.category === activeTab)
+    : [];
 
   return (
     <div className="home-page">
@@ -33,19 +34,13 @@ function Home() {
       <section className="intro">
         <p>
           Welcome to my studio—an explosion of vibrant palettes and whimsical
-          forms. Wander through the gallery below and let each piece tell you its
+          forms. Choose a category below to explore my artwork and let each piece tell you its
           story.
         </p>
       </section>
 
-      {/* Gallery tabs */}
+      {/* Gallery tabs - removed "All Artwork" button */}
       <div className="gallery-tabs">
-        <button 
-          className={activeTab === 'all' ? 'active' : ''} 
-          onClick={() => setActiveTab('all')}
-        >
-          All Artwork
-        </button>
         <button 
           className={activeTab === 'houses' ? 'active' : ''} 
           onClick={() => setActiveTab('houses')}
@@ -66,7 +61,8 @@ function Home() {
         </button>
       </div>
 
-      <Gallery art={filteredArtworks} />
+      {/* Only show gallery if a tab is selected */}
+      {activeTab && <Gallery art={filteredArtworks} />}
     </div>
   );
 }
