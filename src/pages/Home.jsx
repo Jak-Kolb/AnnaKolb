@@ -28,6 +28,11 @@ function Home() {
   };
 
   const heroImage = process.env.PUBLIC_URL + getFirstImageByCategory('houses');
+  const firstImageCar = process.env.PUBLIC_URL + '/imgs/cars/car1.png'.replace(/\s+/g, '_');
+  const firstImageAnimal = process.env.PUBLIC_URL + 'imgs/animals/dog1.JPG'.replace(/\s+/g, '_');
+  const firstImageHouse = process.env.PUBLIC_URL + 'imgs/houses/IMG_4886.HEIC'.replace(/\s+/g, '_');
+  
+
   const [activeTab, setActiveTab] = useState(null);
 
   // Debug artworks data on component mount
@@ -71,7 +76,7 @@ function Home() {
         <div className="category-cards">
           <div 
             className="category-card"
-            style={{ backgroundImage: `url(${getFirstImageByCategory('houses')})` }}
+            style={{ backgroundImage: `url(${firstImageHouse})` }}
             onClick={() => setActiveTab('houses')}
           >
             <div className="category-overlay">
@@ -81,7 +86,7 @@ function Home() {
           
           <div 
             className="category-card"
-            style={{ backgroundImage: `url(${getFirstImageByCategory('animals')})` }}
+            style={{ backgroundImage: `url(${firstImageAnimal})` }}
             onClick={() => setActiveTab('animals')}
           >
             <div className="category-overlay">
@@ -91,7 +96,7 @@ function Home() {
           
           <div 
             className="category-card"
-            style={{ backgroundImage: `url(${getFirstImageByCategory('cars')})` }}
+            style={{ backgroundImage: `url(${firstImageCar})` }}
             onClick={() => setActiveTab('cars')}
           >
             <div className="category-overlay">
