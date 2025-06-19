@@ -26,19 +26,25 @@ const artworks = [
   },
   {
     id: 5,
-    src: process.env.PUBLIC_URL + "/imgs/cars/5FCAD356-CAE8-4177-9F4E-C26A704A55C8.heic",
+    src:
+      process.env.PUBLIC_URL +
+      "/imgs/cars/5FCAD356-CAE8-4177-9F4E-C26A704A55C8.heic",
     title: "Art 5",
     category: "cars",
   },
   {
     id: 6,
-    src: process.env.PUBLIC_URL + "/imgs/cars/ED188192-FDDB-441D-A7E9-6DB1BC25D1E9.heic",
+    src:
+      process.env.PUBLIC_URL +
+      "/imgs/cars/ED188192-FDDB-441D-A7E9-6DB1BC25D1E9.heic",
     title: "Art 6",
     category: "cars",
   },
   {
     id: 7,
-    src: process.env.PUBLIC_URL + "/imgs/cars/0CFEE4FE-DB44-4300-B735-966EDFA755A9.heic",
+    src:
+      process.env.PUBLIC_URL +
+      "/imgs/cars/0CFEE4FE-DB44-4300-B735-966EDFA755A9.heic",
     title: "Art 7",
     category: "cars",
   },
@@ -59,6 +65,7 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/houses/IMG_4852.HEIC",
     title: "Art 10",
     category: "houses",
-  }];
+  },
+];
 
 export default artworks;
