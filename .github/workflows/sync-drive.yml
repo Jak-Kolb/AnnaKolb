@@ -4,17 +4,25 @@ on:
   schedule:
     - cron: "0 */6 * * *" # Every 6 hours (less frequent since no file downloads)
   workflow_dispatch: # Allows manual run
+  push:
+    branches:
+      - live-drive-gallery # Replace with your actual branch name
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    # Only run on your specific branch
+    if: github.ref == 'refs/heads/live-drive-gallery' || github.event_name == 'workflow_dispatch'
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: live-drive-gallery # Replace with your actual branch name
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -36,6 +44,11 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Sync Drive metadata and rebuild artworks.js [CI]"
-            git pull --rebase origin main
-            git push
+            git pull --rebase origin live-drive-gallery
+            git push origin live-drive-gallery
           fi
+
+      - name: Trigger Vercel Deploy for Branch
+        if: success()
+        run: |
+          echo "Files synced successfully. Vercel deploy hook will be triggered by the script."
