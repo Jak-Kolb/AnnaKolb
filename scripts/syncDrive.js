@@ -10,7 +10,7 @@ const credentials = require("../anna-kolb-art.json");
 // Google Drive parent folder ID
 const PARENT_FOLDER_ID = "1Ic3Y2Q0cINejiKT1BMsht0qSfnSgJdFT";
 const VERCEL_HOOK_URL =
-  "https://api.vercel.com/v1/integrations/deploy/prj_DI7zIt8xyS5MO1RdLRaod8wby4Ed/m1tnegJLEv"; // <-- replace with your actual hook
+  "https://api.vercel.com/v1/integrations/deploy/prj_DI7zIt8xyS5MO1RdLRaod8wby4Ed/WcwHSMgmgo"; // <-- replace with your actual hook
 
 // Path to the local imgs directory from project root
 const LOCAL_IMG_DIR = path.join(__dirname, "..", "public", "imgs");
