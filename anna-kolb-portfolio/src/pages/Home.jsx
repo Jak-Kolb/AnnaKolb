@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Gallery from '../components/Gallery';
 import artworks from '../data/artworks';
@@ -6,21 +6,45 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const heroImage = process.env.PUBLIC_URL + '/imgs/abstract1.jpg';
-  const [activeTab, setActiveTab] = useState(null); // Changed from 'all' to null
+  const [activeTab, setActiveTab] = useState(null);
 
+  // Debug artworks data on component mount
+  useEffect(() => {
+    // console.log("Full artworks data:", artworks);
+  }, []);
+  
   // Filter artworks based on active tab
-  // Only filter if a tab is selected
   const filteredArtworks = activeTab 
     ? artworks.filter(art => art.category === activeTab)
     : [];
+    
+  // Modified function to handle spaces in filenames
+  const getFirstImageByCategory = (category) => {
+    console.log(`Looking for category: ${category}`);
+    
+    // First try to find artwork in the data
+    const artwork = artworks.find(art => art.category.toLowerCase() === category.toLowerCase());
+    
+    if (artwork && artwork.src) {
+      console.log(`Found artwork for ${category}:`, artwork.src);
+      
+      // Replace spaces with underscores in the image URL
+      const formattedSrc = artwork.src.replace(/\s+/g, '_');
+      return formattedSrc;
+    }
+    
+    // If not found in artwork data, try the fallback with spaces replaced
+    console.log(`No artwork found for ${category}, using fallback`);
+    const fallbackPath = process.env.PUBLIC_URL + `/imgs/${category}-fallback.jpg`.replace(/\s+/g, '_');
+    
+    return fallbackPath;
+  };
 
   return (
     <div className="home-page">
       <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>   
-        {/* Position the nav-links in a container for better positioning */}
         <div className="hero-nav">
           <ul className="nav-links">
-            {/* <li><Link to="/">Home</Link></li> */}
             <li><Link to="/about">About</Link></li>
           </ul>
         </div>
@@ -39,30 +63,50 @@ function Home() {
         </p>
       </section>
 
-      {/* Gallery tabs - removed "All Artwork" button */}
-      <div className="gallery-tabs">
-        <button 
-          className={activeTab === 'houses' ? 'active' : ''} 
-          onClick={() => setActiveTab('houses')}
-        >
-          House Paintings
-        </button>
-        <button 
-          className={activeTab === 'animals' ? 'active' : ''} 
-          onClick={() => setActiveTab('animals')}
-        >
-          Animals
-        </button>
-        <button 
-          className={activeTab === 'cars' ? 'active' : ''} 
-          onClick={() => setActiveTab('cars')}
-        >
-          Cars
-        </button>
-      </div>
-
-      {/* Only show gallery if a tab is selected */}
-      {activeTab && <Gallery art={filteredArtworks} />}
+      {/* Large category cards instead of small buttons */}
+      {!activeTab ? (
+        <div className="category-cards">
+          <div 
+            className="category-card"
+            style={{ backgroundImage: `url(${getFirstImageByCategory('houses')})` }}
+            onClick={() => setActiveTab('houses')}
+          >
+            <div className="category-overlay">
+              <h2>House Paintings</h2>
+            </div>
+          </div>
+          
+          <div 
+            className="category-card"
+            style={{ backgroundImage: `url(${getFirstImageByCategory('animals')})` }}
+            onClick={() => setActiveTab('animals')}
+          >
+            <div className="category-overlay">
+              <h2>Animals</h2>
+            </div>
+          </div>
+          
+          <div 
+            className="category-card"
+            style={{ backgroundImage: `url(${getFirstImageByCategory('cars')})` }}
+            onClick={() => setActiveTab('cars')}
+          >
+            <div className="category-overlay">
+              <h2>Cars</h2>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="gallery-header">
+            <h2>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h2>
+            <button className="back-button" onClick={() => setActiveTab(null)}>
+              Back to Categories
+            </button>
+          </div>
+          <Gallery art={filteredArtworks} />
+        </>
+      )}
     </div>
   );
 }

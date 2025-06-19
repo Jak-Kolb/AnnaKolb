@@ -1,136 +1,28 @@
+// filepath: c:\Users\fishi\Coding\AnnaKolb\anna-kolb-portfolio\src\data\artworks.js
 const artworks = [
   {
     id: 1,
-    src: process.env.PUBLIC_URL + "/imgs/try1.jpg",
-    title: "Art1",
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_4873.HEIC",
+    title: "Art 1",
+    category: "houses",
+  },
+  {
+    id: 2,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_4872.HEIC",
+    title: "Art 2",
     category: "houses",
   },
   {
     id: 3,
-    src: process.env.PUBLIC_URL + "/imgs/shroom.jpg",
-    title: "Art2",
-    category: "houses",
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.jpeg",
+    title: "Art 3",
+    category: "animals",
   },
   {
     id: 4,
-    src: process.env.PUBLIC_URL + "/imgs/wave.jpg",
-    title: "Art3",
-    category: "houses",
-  },
-  {
-    id: 7,
-    src: process.env.PUBLIC_URL + "/imgs/car1.jpg",
-    title: "Art4",
-    category: "cars",
-  },
-  {
-    id: 8,
-    src: process.env.PUBLIC_URL + "/imgs/car2.jpg",
-    title: "Art5",
-    category: "cars",
-  },
-  {
-    id: 9,
-    src: process.env.PUBLIC_URL + "/imgs/car3.jpg",
-    title: "Art6",
-    category: "cars",
-  },
-  {
-    id: 10,
-    src: process.env.PUBLIC_URL + "/imgs/animal1.jpg",
-    title: "Art7",
+    src: process.env.PUBLIC_URL + "/imgs/animals/Cat_1.jpeg",
+    title: "Art 4",
     category: "animals",
-  },
-  {
-    id: 11,
-    src: process.env.PUBLIC_URL + "/imgs/animal2.jpg",
-    title: "Art8",
-    category: "animals",
-  },
-  {
-    id: 12,
-    src: process.env.PUBLIC_URL + "/imgs/animal3.jpg",
-    title: "Art9",
-    category: "animals",
-  },
-  {
-    id: 13,
-    src: process.env.PUBLIC_URL + "/imgs/animal4.jpg",
-    title: "Art10",
-    category: "animals",
-  },
-  {
-    id: 14,
-    src: process.env.PUBLIC_URL + "/imgs/animal5.jpg",
-    title: "Art11",
-    category: "animals",
-  },
-  {
-    id: 15,
-    src: process.env.PUBLIC_URL + "/imgs/animal6.jpg",
-    title: "Art12",
-    category: "animals",
-  },
-  {
-    id: 16,
-    src: process.env.PUBLIC_URL + "/imgs/animal7.jpg",
-    title: "Art13",
-    category: "animals",
-  },
-  {
-    id: 17,
-    src: process.env.PUBLIC_URL + "/imgs/animal8.jpg",
-    title: "Art14",
-    category: "animals",
-  },
-  {
-    id: 18,
-    src: process.env.PUBLIC_URL + "/imgs/animal9.jpg",
-    title: "Art15",
-    category: "animals",
-  },
-  {
-    id: 19,
-    src: process.env.PUBLIC_URL + "/imgs/animal10.jpg",
-    title: "Art16",
-    category: "animals",
-  },
-  {
-    id: 20,
-    src: process.env.PUBLIC_URL + "/imgs/animal11.jpg",
-    title: "Art17",
-    category: "animals",
-  },
-  {
-    id: 21,
-    src: process.env.PUBLIC_URL + "/imgs/animal12.jpg",
-    title: "Art18",
-    category: "animals",
-  },
-  {
-    id: 22,
-    src: process.env.PUBLIC_URL + "/imgs/animal13.jpg",
-    title: "Art19",
-    category: "animals",
-  },
-  {
-    id: 23,
-    src: process.env.PUBLIC_URL + "/imgs/animal14.jpg",
-    title: "Art20",
-    category: "animals",
-  },
-  {
-    id: 24,
-    src: process.env.PUBLIC_URL + "/imgs/abstract1.jpg",
-    title: "Art21",
-    category: "houses",
-  },
-  {
-    id: 25,
-    src: process.env.PUBLIC_URL + "/imgs/abstract2.jpg",
-    title: "Art22",
-    category: "houses",
-  },
-];
+  }];
 
 export default artworks;
