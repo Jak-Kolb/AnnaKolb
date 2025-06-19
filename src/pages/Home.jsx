@@ -21,7 +21,8 @@ function Home() {
     return 'https://via.placeholder.com/400x300?text=No+Image';
   };
 
-  const heroImage = process.env.PUBLIC_URL + getFirstImageByCategory('houses');
+  // Remove process.env.PUBLIC_URL concatenation
+  const heroImage = getFirstImageByCategory('houses');
   const [activeTab, setActiveTab] = useState(null);
 
   // Debug artworks data on component mount

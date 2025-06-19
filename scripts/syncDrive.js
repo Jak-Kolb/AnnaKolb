@@ -26,7 +26,7 @@ const LOCAL_IMG_DIR = path.join(__dirname, "..", "public", "imgs");
 // Authenticate with Google Drive API - UPDATE THE SCOPE
 const auth = new google.auth.GoogleAuth({
   credentials,
-  scopes: ["https://www.googleapis.com/auth/drive.readonly"],
+  scopes: ["https://www.googleapis.com/auth/drive"], // Remove .readonly
 });
 
 const drive = google.drive({ version: "v3", auth });
@@ -125,7 +125,26 @@ export default artworks;`;
   console.log(`Rebuilt artworks.js with ${artworksEntries.length} Drive URLs`);
 }
 
-// Main function to sync metadata only (no file downloads)
+// Make a file viewable by anyone with the link
+async function makeFileViewableByLink(fileId) {
+  try {
+    await drive.permissions.create({
+      fileId: fileId,
+      requestBody: {
+        role: "reader",
+        type: "anyone",
+      },
+    });
+    console.log(`Made file ${fileId} viewable by anyone with link`);
+  } catch (error) {
+    if (error.code !== 409) {
+      // Ignore if permission already exists
+      console.error(`Failed to make file ${fileId} viewable:`, error.message);
+    }
+  }
+}
+
+// Update the main sync function
 async function syncDriveToLocal() {
   try {
     // Get all category folders
@@ -145,6 +164,9 @@ async function syncDriveToLocal() {
 
       // Add to the list of all images (for rebuilding artworks.js)
       for (const file of files) {
+        // Make file viewable by anyone with the link
+        await makeFileViewableByLink(file.id);
+
         allDriveImages.push({
           fileId: file.id,
           filename: file.name,
