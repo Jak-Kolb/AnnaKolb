@@ -29,7 +29,7 @@ function Home() {
 
   const heroImage = process.env.PUBLIC_URL + getFirstImageByCategory('houses');
   const firstImageCar = process.env.PUBLIC_URL + '/imgs/cars/car1.png'.replace(/\s+/g, '_');
-  const firstImageAnimal = process.env.PUBLIC_URL + 'imgs/animals/dog1.JPG'.replace(/\s+/g, '_');
+  const firstImageAnimal = process.env.PUBLIC_URL + 'imgs/animals/dog1.PNG'.replace(/\s+/g, '_');
   const firstImageHouse = process.env.PUBLIC_URL + 'imgs/houses/IMG_4886.HEIC'.replace(/\s+/g, '_');
   
 
