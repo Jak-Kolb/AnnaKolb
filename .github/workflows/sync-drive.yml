@@ -38,5 +38,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Sync Drive images and rebuild artworks.js [CI]"
+            git pull --rebase origin main
             git push
           fi
