@@ -27,4 +27,7 @@ jobs:
       - name: Run Drive Sync Script
         env:
           VERCEL_HOOK_URL: ${{ secrets.VERCEL_HOOK_URL }}
+          SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
         run: node scripts/syncDrive.js
+
+        
