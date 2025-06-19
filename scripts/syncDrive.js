@@ -81,7 +81,7 @@ function sanitizeFileName(filename) {
 
 // Convert Google Drive file ID to direct image URL
 function getDriveImageUrl(fileId) {
-  return `https://drive.google.com/drive/folders/1Ic3Y2Q0cINejiKT1BMsht0qSfnSgJdFT${fileId}`;
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
 }
 
 // Completely rebuild the artworks.js file with Drive URLs
@@ -145,26 +145,19 @@ async function makeFileViewableByLink(fileId) {
 // Update the main sync function
 async function syncDriveToLocal() {
   try {
-    // Get all category folders
     const categoryFolders = await getSubfolders(PARENT_FOLDER_ID);
     console.log(`Found ${categoryFolders.length} category folders`);
 
     const allDriveImages = [];
 
-    // Process each category folder
     for (const folder of categoryFolders) {
       const categoryName = folder.name.toLowerCase();
       console.log(`Processing category: ${categoryName}`);
 
-      // Get all image files in this category
       const files = await listFilesInFolder(folder.id);
       console.log(`Found ${files.length} images in category ${categoryName}`);
 
-      // Add to the list of all images (for rebuilding artworks.js)
       for (const file of files) {
-        // Make file viewable by anyone with the link
-        await makeFileViewableByLink(file.id);
-
         allDriveImages.push({
           fileId: file.id,
           filename: file.name,
@@ -174,7 +167,6 @@ async function syncDriveToLocal() {
       }
     }
 
-    // Rebuild artworks.js with Drive URLs
     await rebuildArtworksFile(allDriveImages);
 
     console.log("Sync complete!");
