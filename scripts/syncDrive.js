@@ -23,10 +23,10 @@ const VERCEL_HOOK_URL =
 // Path to the local imgs directory from project root
 const LOCAL_IMG_DIR = path.join(__dirname, "..", "public", "imgs");
 
-// Authenticate with Google Drive API - UPDATE THE SCOPE
+// Authenticate with Google Drive API
 const auth = new google.auth.GoogleAuth({
   credentials,
-  scopes: ["https://www.googleapis.com/auth/drive"], // Remove .readonly
+  scopes: ["https://www.googleapis.com/auth/drive"], // Full drive access needed for permission management
 });
 
 const drive = google.drive({ version: "v3", auth });
@@ -79,11 +79,9 @@ function sanitizeFileName(filename) {
   return filename.replace(/\s+/g, "_");
 }
 
-// Convert Google Drive file ID to direct image URL for service account access
+// Convert Google Drive file ID to direct image URL
 function getDriveImageUrl(fileId) {
-  // For service account access, you might need to use a different URL format
-  // This still works for shared files that the service account has access to
-  return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  return `https://drive.google.com/drive/folders/1Ic3Y2Q0cINejiKT1BMsht0qSfnSgJdFT${fileId}`;
 }
 
 // Completely rebuild the artworks.js file with Drive URLs
