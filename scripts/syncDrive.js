@@ -1,4 +1,4 @@
-// filepath: c:\Users\fishi\Coding\AnnaKolb\anna-kolb-portfolio\scripts\syncDrive.js
+// filepath: c:\Users\fishi\Coding\AnnaKolb\scripts\syncDrive.js
 const { google } = require("googleapis");
 const fs = require("fs-extra");
 const path = require("path");
@@ -103,7 +103,7 @@ async function rebuildArtworksFile(allImages) {
   });
 
   // Create the new artworks.js content
-  const newContent = `// filepath: c:\\Users\\fishi\\Coding\\AnnaKolb\\anna-kolb-portfolio\\src\\data\\artworks.js
+  const newContent = `// filepath: c:\\Users\\fishi\\Coding\\AnnaKolb\\src\\data\\artworks.js
 const artworks = [${artworksEntries.join(",")}];
 
 export default artworks;`;

@@ -1,4 +1,4 @@
-// filepath: c:\Users\fishi\Coding\AnnaKolb\anna-kolb-portfolio\src\data\artworks.js
+// filepath: c:\Users\fishi\Coding\AnnaKolb\src\data\artworks.js
 const artworks = [
   {
     id: 1,
