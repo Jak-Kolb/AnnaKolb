@@ -5,26 +5,20 @@ import artworks from '../data/artworks';
 import { Link } from 'react-router-dom';
 
 function Home() {
-    const getFirstImageByCategory = (category) => {
+  const getFirstImageByCategory = (category) => {
     console.log(`Looking for category: ${category}`);
     
-    // First try to find artwork in the data
+    // Find artwork in the data (now contains Drive URLs)
     const artwork = artworks.find(art => art.category.toLowerCase() === category.toLowerCase());
     
     if (artwork && artwork.src) {
       console.log(`Found artwork for ${category}:`, artwork.src);
-      
-      // Replace spaces with underscores in the image URL
-      const formattedSrc = artwork.src.replace(/\s+/g, '_');
-      console.log(`Formatted source for ${category}:`, formattedSrc);
-      return formattedSrc;
+      return artwork.src; // Direct Drive URL, no formatting needed
     }
     
-    // If not found in artwork data, try the fallback with spaces replaced
+    // Fallback to a placeholder or default image
     console.log(`No artwork found for ${category}, using fallback`);
-    const fallbackPath = process.env.PUBLIC_URL + `/imgs/${category}-fallback.jpg`.replace(/\s+/g, '_');
-    
-    return fallbackPath;
+    return 'https://via.placeholder.com/400x300?text=No+Image';
   };
 
   const heroImage = process.env.PUBLIC_URL + getFirstImageByCategory('houses');

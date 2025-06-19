@@ -23,7 +23,7 @@ const VERCEL_HOOK_URL =
 // Path to the local imgs directory from project root
 const LOCAL_IMG_DIR = path.join(__dirname, "..", "public", "imgs");
 
-// Authenticate with Google Drive API
+// Authenticate with Google Drive API - UPDATE THE SCOPE
 const auth = new google.auth.GoogleAuth({
   credentials,
   scopes: ["https://www.googleapis.com/auth/drive.readonly"],
@@ -79,7 +79,14 @@ function sanitizeFileName(filename) {
   return filename.replace(/\s+/g, "_");
 }
 
-// Completely rebuild the artworks.js file with the current images
+// Convert Google Drive file ID to direct image URL for service account access
+function getDriveImageUrl(fileId) {
+  // For service account access, you might need to use a different URL format
+  // This still works for shared files that the service account has access to
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
+}
+
+// Completely rebuild the artworks.js file with Drive URLs
 async function rebuildArtworksFile(allImages) {
   const artworksPath = path.join(__dirname, "..", "src", "data", "artworks.js");
 
@@ -97,106 +104,57 @@ async function rebuildArtworksFile(allImages) {
   // Create artwork entries with sequential IDs
   allImages.forEach((img, index) => {
     const id = index + 1;
-    // Sanitize the filename to replace spaces with underscores
-    const sanitizedFilename = sanitizeFileName(img.filename);
-    const imgPath = `${img.category}/${sanitizedFilename}`;
 
     artworksEntries.push(`
   {
     id: ${id},
-    src: process.env.PUBLIC_URL + "/imgs/${imgPath}",
+    src: "${getDriveImageUrl(img.fileId)}",
     title: "${img.title || `Art ${id}`}",
     category: "${img.category}",
   }`);
   });
 
   // Create the new artworks.js content
-  const newContent = `// filepath: c:\\Users\\fishi\\Coding\\AnnaKolb\\src\\data\\artworks.js
+  const newContent = `// Auto-generated from Google Drive
 const artworks = [${artworksEntries.join(",")}];
 
 export default artworks;`;
 
   // Write the updated content back to the file
   fs.writeFileSync(artworksPath, newContent, "utf8");
-  console.log(`Rebuilt artworks.js with ${artworksEntries.length} entries`);
+  console.log(`Rebuilt artworks.js with ${artworksEntries.length} Drive URLs`);
 }
 
-// Main function to sync files and update artworks.js
+// Main function to sync metadata only (no file downloads)
 async function syncDriveToLocal() {
   try {
-    // Ensure the local imgs directory exists
-    fs.ensureDirSync(LOCAL_IMG_DIR);
-
     // Get all category folders
     const categoryFolders = await getSubfolders(PARENT_FOLDER_ID);
     console.log(`Found ${categoryFolders.length} category folders`);
 
     const allDriveImages = [];
-    const localImagesToKeep = new Set();
 
     // Process each category folder
     for (const folder of categoryFolders) {
       const categoryName = folder.name.toLowerCase();
       console.log(`Processing category: ${categoryName}`);
 
-      // Ensure category directory exists
-      const categoryDir = path.join(LOCAL_IMG_DIR, categoryName);
-      fs.ensureDirSync(categoryDir);
-
       // Get all image files in this category
       const files = await listFilesInFolder(folder.id);
       console.log(`Found ${files.length} images in category ${categoryName}`);
 
-      // Download each file if it doesn't exist locally
+      // Add to the list of all images (for rebuilding artworks.js)
       for (const file of files) {
-        // Sanitize the filename to replace spaces with underscores
-        const sanitizedFilename = sanitizeFileName(file.name);
-        const localFilePath = path.join(categoryDir, sanitizedFilename);
-        const relativePath = `${categoryName}/${sanitizedFilename}`;
-
-        // Add to the list of files to keep
-        localImagesToKeep.add(relativePath);
-
-        // Check if the file already exists locally
-        if (!fs.existsSync(localFilePath)) {
-          console.log(
-            `Downloading ${file.name} to ${categoryName} as ${sanitizedFilename}...`
-          );
-          await downloadFile(file.id, localFilePath);
-        } else {
-          console.log(
-            `${sanitizedFilename} already exists in ${categoryName}, skipping.`
-          );
-        }
-
-        // Add to the list of all images (for rebuilding artworks.js)
         allDriveImages.push({
-          filename: sanitizedFilename, // Use sanitized filename
+          fileId: file.id,
+          filename: file.name,
           category: categoryName,
           modifiedTime: file.modifiedTime,
         });
       }
     }
 
-    // Delete local files that are no longer in Google Drive
-    for (const category of await fs.readdir(LOCAL_IMG_DIR)) {
-      const categoryDir = path.join(LOCAL_IMG_DIR, category);
-
-      // Skip if not a directory
-      if (!fs.statSync(categoryDir).isDirectory()) continue;
-
-      for (const file of await fs.readdir(categoryDir)) {
-        const relativePath = `${category}/${file}`;
-
-        if (!localImagesToKeep.has(relativePath)) {
-          const filePath = path.join(categoryDir, file);
-          console.log(`Deleting ${relativePath} - no longer in Google Drive`);
-          await fs.remove(filePath);
-        }
-      }
-    }
-
-    // Rebuild artworks.js with the current images in order
+    // Rebuild artworks.js with Drive URLs
     await rebuildArtworksFile(allDriveImages);
 
     console.log("Sync complete!");

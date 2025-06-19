@@ -1,8 +1,8 @@
-name: Sync Google Drive Art
+name: Sync Google Drive Art Metadata
 
 on:
   schedule:
-    - cron: "0 * * * *" # Every hour UTC
+    - cron: "0 */6 * * *" # Every 6 hours (less frequent since no file downloads)
   workflow_dispatch: # Allows manual run
 
 jobs:
@@ -21,8 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Restore service account key
-
       - name: Run Drive Sync Script
         env:
           VERCEL_HOOK_URL: ${{ secrets.VERCEL_HOOK_URL }}
@@ -33,11 +31,11 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add public/imgs src/data/artworks.js
+          git add src/data/artworks.js
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Sync Drive images and rebuild artworks.js [CI]"
+            git commit -m "Sync Drive metadata and rebuild artworks.js [CI]"
             git pull --rebase origin main
             git push
           fi
