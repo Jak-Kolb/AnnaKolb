@@ -21,8 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Restore service account key
-        run: echo "${{ secrets.SERVICE_ACCOUNT_JSON }}" > anna-kolb-art.json
+      # - name: Restore service account key
 
       - name: Run Drive Sync Script
         env:

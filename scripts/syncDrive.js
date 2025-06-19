@@ -5,8 +5,8 @@ const path = require("path");
 const axios = require("axios");
 
 // Load service account credentials
-const credentials = require("../anna-kolb-art.json");
-// const credentials = JSON.parse(process.env.SERVICE_ACCOUNT_JSON);
+// const credentials = require("../anna-kolb-art.json");
+const credentials = JSON.parse(process.env.SERVICE_ACCOUNT_JSON);
 
 // Google Drive parent folder ID
 const PARENT_FOLDER_ID = "1Ic3Y2Q0cINejiKT1BMsht0qSfnSgJdFT";
