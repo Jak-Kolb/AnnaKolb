@@ -29,4 +29,14 @@ jobs:
           SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
         run: node scripts/syncDrive.js
 
-        
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add public/imgs src/data/artworks.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Sync Drive images and rebuild artworks.js [CI]"
+            git push
+          fi
