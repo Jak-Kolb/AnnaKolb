@@ -54,6 +54,7 @@ function Home() {
         <div className="hero-nav">
           <ul className="nav-links">
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
         

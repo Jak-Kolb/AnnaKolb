@@ -129,7 +129,7 @@
 }
 
 .gallery-tabs button.active {
-  background: linear-gradient(45deg, #ff6ef8, #7873f5);
+  /* background: linear-gradient(45deg, #ff6ef8, #7873f5); */
   color: white;
   box-shadow: 0 4px 10px rgba(120, 115, 245, 0.4);
 }
