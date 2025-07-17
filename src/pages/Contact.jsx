@@ -45,7 +45,7 @@ function Contact() {
           subject: formData.subject,
           message: formData.message,
           time: currentTime,
-          to_email: 'anna@annakolb.com'
+        //   to_email: 'anna@annakolb.com'
         },
         's36wETdvNMGlXRnI1' // Replace with your EmailJS user ID
       );
