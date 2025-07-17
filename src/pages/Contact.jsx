@@ -40,7 +40,8 @@ function Contact() {
         'template_liex1w8', // Replace with your EmailJS template ID
         {
           from_name: formData.name,
-          from_email: formData.email,
+          from_email: 'noreply@annakolb.com',
+          reply_to: formData.email,
           subject: formData.subject,
           message: formData.message,
           time: currentTime,
