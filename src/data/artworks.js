@@ -659,6 +659,36 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/cars/Valhalla",
     title: "Art 110",
     category: "cars",
+  },
+  {
+    id: 111,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5337.HEIC",
+    title: "Art 111",
+    category: "houses",
+  },
+  {
+    id: 112,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5343.PNG",
+    title: "Art 112",
+    category: "houses",
+  },
+  {
+    id: 113,
+    src: process.env.PUBLIC_URL + "/imgs/animals/IMG_5333.HEIC",
+    title: "Art 113",
+    category: "animals",
+  },
+  {
+    id: 114,
+    src: process.env.PUBLIC_URL + "/imgs/animals/IMG_5339.HEIC",
+    title: "Art 114",
+    category: "animals",
+  },
+  {
+    id: 115,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5303.HEIC",
+    title: "Art 115",
+    category: "houses",
   }];
 
 export default artworks;
