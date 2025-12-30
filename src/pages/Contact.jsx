@@ -68,7 +68,7 @@ function Contact() {
     <div className="contact-page">
       <div className="contact-header">
         <h1>Get in Touch</h1>
-        <p>I promise I do not bite!</p>
+        {/* <p>I promise I do not bite!</p> */}
       </div>
 
       <div className="contact-content">
