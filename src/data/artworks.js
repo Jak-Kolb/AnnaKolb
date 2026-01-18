@@ -761,6 +761,18 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5520.PNG",
     title: "Art 127",
     category: "houses",
+  },
+  {
+    id: 128,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 128",
+    category: "animals",
+  },
+  {
+    id: 129,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 129",
+    category: "animals",
   }];
 
 export default artworks;
