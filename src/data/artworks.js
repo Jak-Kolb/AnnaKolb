@@ -815,6 +815,54 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
     title: "Art 136",
     category: "animals",
+  },
+  {
+    id: 137,
+    src: process.env.PUBLIC_URL + "/imgs/animals/IMG_6565.PNG",
+    title: "Art 137",
+    category: "animals",
+  },
+  {
+    id: 138,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 138",
+    category: "animals",
+  },
+  {
+    id: 139,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 139",
+    category: "animals",
+  },
+  {
+    id: 140,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 140",
+    category: "animals",
+  },
+  {
+    id: 141,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 141",
+    category: "animals",
+  },
+  {
+    id: 142,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 142",
+    category: "animals",
+  },
+  {
+    id: 143,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 143",
+    category: "animals",
+  },
+  {
+    id: 144,
+    src: process.env.PUBLIC_URL + "/imgs/animals/IMG_6562.PNG",
+    title: "Art 144",
+    category: "animals",
   }];
 
 export default artworks;
