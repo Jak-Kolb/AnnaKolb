@@ -863,6 +863,30 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/animals/IMG_6562.PNG",
     title: "Art 144",
     category: "animals",
+  },
+  {
+    id: 145,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 145",
+    category: "animals",
+  },
+  {
+    id: 146,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 146",
+    category: "animals",
+  },
+  {
+    id: 147,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 147",
+    category: "animals",
+  },
+  {
+    id: 148,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
+    title: "Art 148",
+    category: "animals",
   }];
 
 export default artworks;
