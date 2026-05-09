@@ -14,15 +14,12 @@
 .contact-header h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: #eeeaea;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #222;
 }
 
 .contact-header p {
   font-size: 1.2rem;
-  color: #eeeaea;
+  color: #555;
   line-height: 1.6;
 }
 
@@ -190,12 +187,12 @@
 
 .back-link {
   display: inline-block;
-  color: #e9e9e9;
+  color: #333;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.75rem 1.5rem;
-  border: 2px solid #ffffff;
+  border: 2px solid #333;
   border-radius: 8px;
   transition: all 0.3s ease;
 }

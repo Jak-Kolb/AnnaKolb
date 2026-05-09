@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Gallery from '../components/Gallery';
 import artworks from '../data/artworks';
-import { Link } from 'react-router-dom';
+
 
 function Home() {
     const getFirstImageByCategory = (category) => {
@@ -50,14 +50,7 @@ function Home() {
 
   return (
     <div className="home-page">
-      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>   
-        <div className="hero-nav">
-          <ul className="nav-links">
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-        
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="overlay">
           <h1>Anna Kolb</h1>
           <p className="tagline">Where Color Meets Imagination</p>

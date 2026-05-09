@@ -1,14 +1,13 @@
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   margin: 0;
-  background: linear-gradient(120deg, #dcba4a, #1d88b3);
+  background: #ffffff;
   color: #333;
   min-height: 100vh;
 }
 
 .main-content {
-  padding: 0em 0em;
-  /* max-width: 1200px; */
+  padding-top: var(--navbar-height, 64px);
   margin: 0 auto;
 }
 

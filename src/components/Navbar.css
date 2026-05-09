@@ -1,32 +1,212 @@
 .navbar {
-  position: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height, 64px);
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background: linear-gradient(90deg, #ff6ec4, #7873f5); */
-  padding: 1em 2em;
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0 2rem;
+  z-index: 1000;
 }
 
-.nav-title {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
+.navbar-logo-link {
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.nav-links {
+/* ── Desktop nav ── */
+.nav-menu {
+  display: flex;
+}
+
+.nav-list {
   list-style: none;
   display: flex;
-  gap: 1em;
+  gap: 0.25rem;
   margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
-  color: #fff;
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
   text-decoration: none;
-  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+  line-height: 1;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: #f5f5f5;
+  color: #000;
+  outline: none;
+}
+
+/* Dropdown caret */
+.caret {
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.dropdown-open > .dropdown-trigger .caret {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown menu ── */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  z-index: 100;
+}
+
+/* Show on hover (desktop) or when the trigger/menu has focus (keyboard & mobile tap) */
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus-visible {
+  background: #f5f5f5;
+  color: #000;
+  outline: none;
+}
+
+/* ── Hamburger button ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ── Mobile layout ── */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: var(--navbar-height, 64px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+  }
+
+  .nav-menu.open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #f0f0f0;
+    background: #fafafa;
+    padding: 0;
+    min-width: unset;
+  }
+
+  .dropdown-link {
+    padding: 0.7rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-link:last-child {
+    border-bottom: none;
+  }
 }
