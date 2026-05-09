@@ -26,9 +26,7 @@ const artworks = [
   },
   {
     id: 5,
-    src:
-      process.env.PUBLIC_URL +
-      "/imgs/houses/CB619201-43BD-4C58-8B53-75C9F7AB2244.JPG",
+    src: process.env.PUBLIC_URL + "/imgs/houses/CB619201-43BD-4C58-8B53-75C9F7AB2244.JPG",
     title: "Art 5",
     category: "houses",
   },
@@ -502,9 +500,7 @@ const artworks = [
   },
   {
     id: 84,
-    src:
-      process.env.PUBLIC_URL +
-      "/imgs/houses/Screenshot_2025-07-13_at_3.50.13_PM.png",
+    src: process.env.PUBLIC_URL + "/imgs/houses/Screenshot_2025-07-13_at_3.50.13_PM.png",
     title: "Art 84",
     category: "houses",
   },
