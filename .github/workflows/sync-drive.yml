@@ -33,11 +33,11 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
+          git pull --rebase origin main
           git add public/imgs src/data/artworks.js
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Sync Drive images and rebuild artworks.js [CI]"
-            git pull --rebase origin main
             git push
           fi
