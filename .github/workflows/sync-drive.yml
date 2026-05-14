@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Pull latest changes
+        run: git pull --rebase origin main
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -20,8 +23,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      # - name: Restore service account key
 
       - name: Run Drive Sync Script
         env:
@@ -33,7 +34,6 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git pull --rebase origin main
           git add public/imgs src/data/artworks.js
           if git diff --cached --quiet; then
             echo "No changes to commit."
