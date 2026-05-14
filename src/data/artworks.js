@@ -653,12 +653,6 @@ const artworks = [
     category: "cars",
   },
   {
-    id: 109,
-    src: process.env.PUBLIC_URL + "/imgs/cars/IMG_5505.PNG",
-    title: "Art 109",
-    category: "cars",
-  },
-  {
     id: 110,
     src: process.env.PUBLIC_URL + "/imgs/cars/IMG_5509.PNG",
     title: "Art 110",
@@ -720,7 +714,7 @@ const artworks = [
   },
   {
     id: 120,
-    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5519.PNG",
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5520.PNG",
     title: "Art 120",
     category: "houses",
   },
@@ -755,27 +749,9 @@ const artworks = [
     category: "houses",
   },
   {
-    id: 126,
-    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5513.PNG",
-    title: "Art 126",
-    category: "houses",
-  },
-  {
-    id: 127,
-    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5520.PNG",
-    title: "Art 127",
-    category: "houses",
-  },
-  {
     id: 128,
     src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
     title: "Art 128",
-    category: "animals",
-  },
-  {
-    id: 129,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 129",
     category: "animals",
   },
   {
@@ -803,63 +779,9 @@ const artworks = [
     category: "animals",
   },
   {
-    id: 134,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 134",
-    category: "animals",
-  },
-  {
-    id: 135,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 135",
-    category: "animals",
-  },
-  {
-    id: 136,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 136",
-    category: "animals",
-  },
-  {
     id: 137,
     src: process.env.PUBLIC_URL + "/imgs/animals/IMG_6565.PNG",
     title: "Art 137",
-    category: "animals",
-  },
-  {
-    id: 138,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 138",
-    category: "animals",
-  },
-  {
-    id: 139,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 139",
-    category: "animals",
-  },
-  {
-    id: 140,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 140",
-    category: "animals",
-  },
-  {
-    id: 141,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 141",
-    category: "animals",
-  },
-  {
-    id: 142,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 142",
-    category: "animals",
-  },
-  {
-    id: 143,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 143",
     category: "animals",
   },
   {
@@ -868,29 +790,6 @@ const artworks = [
     title: "Art 144",
     category: "animals",
   },
-  {
-    id: 145,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 145",
-    category: "animals",
-  },
-  {
-    id: 146,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 146",
-    category: "animals",
-  },
-  {
-    id: 147,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 147",
-    category: "animals",
-  },
-  {
-    id: 148,
-    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
-    title: "Art 148",
-    category: "animals",
-  }];
+];
 
 export default artworks;

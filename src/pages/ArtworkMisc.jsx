@@ -1,11 +1,15 @@
 import React from 'react';
-import './Stub.css';
+import Gallery from '../components/Gallery';
+import artworks from '../data/artworks';
+import './GalleryPage.css';
 
 function ArtworkMisc() {
+  const art = artworks.filter(a => a.category === 'houses');
+
   return (
-    <div className="stub-page">
-      <h1>Miscellaneous</h1>
-      <p>Coming soon.</p>
+    <div className="gallery-page">
+      <h1>House Portraits</h1>
+      <Gallery art={art} />
     </div>
   );
 }

@@ -1,11 +1,15 @@
 import React from 'react';
-import './Stub.css';
+import Gallery from '../components/Gallery';
+import artworks from '../data/artworks';
+import './GalleryPage.css';
 
 function AnimalPortraits() {
+  const art = artworks.filter(a => a.category === 'animals');
+
   return (
-    <div className="stub-page">
+    <div className="gallery-page">
       <h1>Animal Portraits</h1>
-      <p>Coming soon.</p>
+      <Gallery art={art} />
     </div>
   );
 }

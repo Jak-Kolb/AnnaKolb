@@ -147,17 +147,33 @@ async function syncDriveToLocal() {
       const files = await listFilesInFolder(folder.id);
       console.log(`Found ${files.length} images in category ${categoryName}`);
 
+      // Track filenames used in this category to detect collisions
+      const usedFilenames = new Set();
+
       // Download each file if it doesn't exist locally
       for (const file of files) {
         // Sanitize the filename to replace spaces with underscores
-        const sanitizedFilename = sanitizeFileName(file.name);
+        let sanitizedFilename = sanitizeFileName(file.name);
+
+        // If this filename is already taken in this category, make it unique
+        // using the Drive file ID before the extension
+        if (usedFilenames.has(sanitizedFilename)) {
+          const ext = path.extname(sanitizedFilename);
+          const base = path.basename(sanitizedFilename, ext);
+          sanitizedFilename = `${base}_${file.id}${ext}`;
+          console.log(
+            `Name collision: renamed duplicate "${file.name}" to "${sanitizedFilename}"`
+          );
+        }
+        usedFilenames.add(sanitizedFilename);
+
         const localFilePath = path.join(categoryDir, sanitizedFilename);
         const relativePath = `${categoryName}/${sanitizedFilename}`;
 
         // Add to the list of files to keep
         localImagesToKeep.add(relativePath);
 
-        // Check if the file already exists locally
+        // Check if the file already exists locally (by Drive ID marker or exact match)
         if (!fs.existsSync(localFilePath)) {
           console.log(
             `Downloading ${file.name} to ${categoryName} as ${sanitizedFilename}...`
@@ -171,7 +187,7 @@ async function syncDriveToLocal() {
 
         // Add to the list of all images (for rebuilding artworks.js)
         allDriveImages.push({
-          filename: sanitizedFilename, // Use sanitized filename
+          filename: sanitizedFilename,
           category: categoryName,
           modifiedTime: file.modifiedTime,
         });
