@@ -190,6 +190,7 @@ async function syncDriveToLocal() {
           filename: sanitizedFilename,
           category: categoryName,
           modifiedTime: file.modifiedTime,
+          title: path.basename(file.name, path.extname(file.name)),
         });
       }
     }
