@@ -649,6 +649,12 @@ const artworks = [
     category: "cars",
   },
   {
+    id: 109,
+    src: process.env.PUBLIC_URL + "/imgs/cars/IMG_5505_1SSykYRwESJTDPzMlmKIkCT02UviGY6KC.PNG",
+    title: "Art 109",
+    category: "cars",
+  },
+  {
     id: 110,
     src: process.env.PUBLIC_URL + "/imgs/cars/IMG_5509.PNG",
     title: "Art 110",
@@ -710,7 +716,7 @@ const artworks = [
   },
   {
     id: 120,
-    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5520.PNG",
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5519.PNG",
     title: "Art 120",
     category: "houses",
   },
@@ -745,9 +751,27 @@ const artworks = [
     category: "houses",
   },
   {
+    id: 126,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5513_1EseEgqbbxjs-ESNeCq6NaImyNxVcBdr7.PNG",
+    title: "Art 126",
+    category: "houses",
+  },
+  {
+    id: 127,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_5520.PNG",
+    title: "Art 127",
+    category: "houses",
+  },
+  {
     id: 128,
     src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design.png",
     title: "Art 128",
+    category: "animals",
+  },
+  {
+    id: 129,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1XuA0fqkouzvMODOr1hmUjJZG4KE6AGks.png",
+    title: "Art 129",
     category: "animals",
   },
   {
@@ -775,9 +799,63 @@ const artworks = [
     category: "animals",
   },
   {
+    id: 134,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1QPJgNymPW7OUvcWr0oP1ISED_14H_xjs.png",
+    title: "Art 134",
+    category: "animals",
+  },
+  {
+    id: 135,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1MGz0NdozQgZeUF6gnRQ5d00JvcGet_5n.png",
+    title: "Art 135",
+    category: "animals",
+  },
+  {
+    id: 136,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1P8FPYUR1Ey0gony629lfKl5Qwox1tf_R.png",
+    title: "Art 136",
+    category: "animals",
+  },
+  {
     id: 137,
     src: process.env.PUBLIC_URL + "/imgs/animals/IMG_6565.PNG",
     title: "Art 137",
+    category: "animals",
+  },
+  {
+    id: 138,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1EoA_HQsBITaiQrebCsb6VViz2T7Pd8_f.png",
+    title: "Art 138",
+    category: "animals",
+  },
+  {
+    id: 139,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1HD0X_q8t8tqUinkh4UOixdTCCiWou0tL.png",
+    title: "Art 139",
+    category: "animals",
+  },
+  {
+    id: 140,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1tmX94cepKR-DWcH9Tjylu4aFinSBvsJ4.png",
+    title: "Art 140",
+    category: "animals",
+  },
+  {
+    id: 141,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1BCuT7tWMagbWUO9zE-ThkSv7EAuhCAYw.png",
+    title: "Art 141",
+    category: "animals",
+  },
+  {
+    id: 142,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1R3jXwIwMGmN5e4LkQ_QHYJzXl0UtB0DG.png",
+    title: "Art 142",
+    category: "animals",
+  },
+  {
+    id: 143,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_17sLpnv1NenWxrObfOFqqWbIOnScvajMK.png",
+    title: "Art 143",
     category: "animals",
   },
   {
@@ -786,6 +864,29 @@ const artworks = [
     title: "Art 144",
     category: "animals",
   },
-];
+  {
+    id: 145,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1y-WoAbE8YAFeRYCu8IqCfJ2g_UkQK3C2.png",
+    title: "Art 145",
+    category: "animals",
+  },
+  {
+    id: 146,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1x1lzBzEPb4apnCJiJeAv0S6fmb59T0kU.png",
+    title: "Art 146",
+    category: "animals",
+  },
+  {
+    id: 147,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1FClUsB4dZUlRarI2oOPa1pqTJ4veajDQ.png",
+    title: "Art 147",
+    category: "animals",
+  },
+  {
+    id: 148,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1-uqwYULCXoru6o_IvzEkFQhYhUjzKxOX.png",
+    title: "Art 148",
+    category: "animals",
+  }];
 
 export default artworks;
