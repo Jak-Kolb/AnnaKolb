@@ -887,6 +887,36 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/animals/Cute_Cat_1.jpeg",
     title: "Cute Cat 1",
     category: "animals",
+  },
+  {
+    id: 149,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1Xy7pCmWzhbISGRvpr28c_Ovn_fyb0d3k.png",
+    title: "Untitled design",
+    category: "animals",
+  },
+  {
+    id: 150,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1LDJTpz8IWokoS68D2-hF3M3C8_m7-Mc5.png",
+    title: "Untitled design",
+    category: "animals",
+  },
+  {
+    id: 151,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_10CQ7fOdJBS7yr3CBP8erxZLGCFJQ0aC0.png",
+    title: "Untitled design",
+    category: "animals",
+  },
+  {
+    id: 152,
+    src: process.env.PUBLIC_URL + "/imgs/houses/Untitled_design.png",
+    title: "Untitled design",
+    category: "houses",
+  },
+  {
+    id: 153,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7389.HEIC",
+    title: "IMG_7389",
+    category: "houses",
   }];
 
 export default artworks;
