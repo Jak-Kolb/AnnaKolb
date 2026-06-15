@@ -908,7 +908,7 @@ const artworks = [
   },
   {
     id: 152,
-    src: process.env.PUBLIC_URL + "/imgs/houses/Untitled_design.png",
+    src: process.env.PUBLIC_URL + "/imgs/houses/Untitled_design_1KjSdELM6OycH5qpQa-p93ZlDPkAklQAH.png",
     title: "Untitled design",
     category: "houses",
   },
@@ -916,6 +916,48 @@ const artworks = [
     id: 153,
     src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7389.HEIC",
     title: "IMG_7389",
+    category: "houses",
+  },
+  {
+    id: 154,
+    src: process.env.PUBLIC_URL + "/imgs/houses/Untitled_design_1_gCLxHCUstXUnnEsWuxYylcpiRr9bzeO.png",
+    title: "Untitled design",
+    category: "houses",
+  },
+  {
+    id: 155,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_2511.HEIC",
+    title: "IMG_2511",
+    category: "houses",
+  },
+  {
+    id: 156,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7451.HEIC",
+    title: "IMG_7451",
+    category: "houses",
+  },
+  {
+    id: 157,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7452.HEIC",
+    title: "IMG_7452",
+    category: "houses",
+  },
+  {
+    id: 158,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7403.PNG",
+    title: "IMG_7403",
+    category: "houses",
+  },
+  {
+    id: 159,
+    src: process.env.PUBLIC_URL + "/imgs/houses/IMG_7404.PNG",
+    title: "IMG_7404",
+    category: "houses",
+  },
+  {
+    id: 160,
+    src: process.env.PUBLIC_URL + "/imgs/houses/80317285451__38AB0CD8-1027-45CE-99BE-541ECDAF84A9.HEIC",
+    title: "80317285451__38AB0CD8-1027-45CE-99BE-541ECDAF84A9",
     category: "houses",
   }];
 
