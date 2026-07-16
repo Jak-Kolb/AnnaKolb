@@ -959,6 +959,24 @@ const artworks = [
     src: process.env.PUBLIC_URL + "/imgs/houses/80317285451__38AB0CD8-1027-45CE-99BE-541ECDAF84A9.HEIC",
     title: "80317285451__38AB0CD8-1027-45CE-99BE-541ECDAF84A9",
     category: "houses",
+  },
+  {
+    id: 161,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_14aJyJyfx4_PltVzTPzaeTLTL_rLqUKuu.png",
+    title: "Untitled design",
+    category: "animals",
+  },
+  {
+    id: 162,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_16eL6YI3NC8YcGqjIIo8uIUXDyk5Qeb1X.png",
+    title: "Untitled design",
+    category: "animals",
+  },
+  {
+    id: 163,
+    src: process.env.PUBLIC_URL + "/imgs/animals/Untitled_design_1ht5n8in6YsaCD7TIeAPsqsYfFFK2Pqqn.png",
+    title: "Untitled design",
+    category: "animals",
   }];
 
 export default artworks;
