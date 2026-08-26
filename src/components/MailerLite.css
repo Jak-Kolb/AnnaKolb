@@ -1,8 +1,102 @@
-.mailerlite-embed {
-  display: flex;
-  justify-content: center;
+.nl-form {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f6f6f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nl-form-photo {
+  display: block;
   width: 100%;
-  min-height: 320px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #e8e8e8;
+}
+
+.nl-form-body {
+  padding: 20px 20px 24px;
+}
+
+.nl-form-body h2,
+.nl-form-success h2 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.nl-form-body p,
+.nl-form-success p {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #000;
+}
+
+.nl-form-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nl-form-body input[type='email'],
+.nl-form-body input[type='text'],
+.nl-form-body input[type='tel'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+}
+
+.nl-form-body input:focus {
+  outline: none;
+  border-color: #7873f5;
+}
+
+.nl-form-body button[type='submit'] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.nl-form-body button[type='submit']:hover,
+.nl-form-body button[type='submit']:focus-visible {
+  background: #333;
+  outline: none;
+}
+
+.nl-form-body button[type='submit']:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.nl-form-frame {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  visibility: hidden;
+}
+
+.nl-form-success {
+  padding: 2.5rem 1.5rem;
+  text-align: left;
 }
 
 .newsletter-btn {
