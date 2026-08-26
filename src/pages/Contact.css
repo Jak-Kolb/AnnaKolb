@@ -82,6 +82,12 @@
   line-height: 1.5;
 }
 
+.contact-newsletter-copy {
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
 .contact-form {
   background: white;
   padding: 2rem;

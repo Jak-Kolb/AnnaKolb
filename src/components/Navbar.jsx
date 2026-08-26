@@ -23,6 +23,7 @@ const NAV_ITEMS = [
       { label: 'Works on Canvas', path: '/abstract-art/works-on-canvas' },
     ],
   },
+  { label: 'Newsletter', path: '/newsletter' },
   { label: 'Contact', path: '/contact' },
 ];
 

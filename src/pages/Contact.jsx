@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Contact.css';
 import { Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
+import { MailerLitePopupButton } from '../components/MailerLite';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -103,6 +104,14 @@ function Contact() {
               <span className="contact-label">Twitter:</span>
               <span className="contact-value">@AnnaKolbArt</span>
             </div> */}
+          </div>
+
+          <div className="contact-section">
+            <h2>Newsletter</h2>
+            <p className="contact-newsletter-copy">
+              Opt in for updates on new pieces, commission spots, and more.
+            </p>
+            <MailerLitePopupButton>Join the newsletter</MailerLitePopupButton>
           </div>
 {/* 
           <div className="contact-section">

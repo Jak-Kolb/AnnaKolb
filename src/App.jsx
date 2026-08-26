@@ -12,6 +12,7 @@ import ArtworkMisc from './pages/ArtworkMisc';
 import AbstractArt from './pages/AbstractArt';
 import AbstractArtGallery from './pages/AbstractArtGallery';
 import WorksOnCanvas from './pages/WorksOnCanvas';
+import Newsletter from './pages/Newsletter';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/artwork" element={<Artwork />} />
           <Route path="/artwork/animal-portraits" element={<AnimalPortraits />} />
           <Route path="/artwork/car-portraits" element={<CarPortraits />} />

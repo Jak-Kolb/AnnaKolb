@@ -1,0 +1,31 @@
+.mailerlite-embed {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 320px;
+}
+
+.newsletter-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6ef8, #7873f5);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-btn:hover,
+.newsletter-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(120, 115, 245, 0.3);
+  outline: none;
+}
+
+.newsletter-btn:active {
+  transform: translateY(0);
+}
