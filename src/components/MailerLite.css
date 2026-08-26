@@ -16,6 +16,8 @@
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
