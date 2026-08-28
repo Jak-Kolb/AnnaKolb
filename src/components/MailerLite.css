@@ -86,12 +86,11 @@
   cursor: wait;
 }
 
-.nl-form-frame {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 0;
-  visibility: hidden;
+.nl-form-error {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #b00020;
 }
 
 .nl-form-success {
