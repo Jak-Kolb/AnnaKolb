@@ -191,14 +191,6 @@ export function MailerLiteForm() {
             required
           />
           <input
-            aria-label="Last name"
-            type="text"
-            name="fields[last_name]"
-            placeholder="Last name"
-            autoComplete="family-name"
-            required
-          />
-          <input
             aria-label="First name"
             type="text"
             name="fields[name]"
@@ -207,11 +199,11 @@ export function MailerLiteForm() {
             required
           />
           <input
-            aria-label="Phone"
-            type="tel"
-            name="fields[phone]"
-            placeholder="Phone"
-            autoComplete="tel"
+            aria-label="Last name"
+            type="text"
+            name="fields[last_name]"
+            placeholder="Last name"
+            autoComplete="family-name"
             required
           />
           <input type="hidden" name="ml-submit" value="1" />

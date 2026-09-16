@@ -6,9 +6,8 @@ const SUBSCRIBED_EMAILS_KEY = 'ak-newsletter-emails';
 
 async function fillAndSubmit(email = 'pat@example.com') {
   userEvent.type(screen.getByLabelText('Email'), email);
-  userEvent.type(screen.getByLabelText('Last name'), 'Kolb');
   userEvent.type(screen.getByLabelText('First name'), 'Pat');
-  userEvent.type(screen.getByLabelText('Phone'), '555-0100');
+  userEvent.type(screen.getByLabelText('Last name'), 'Kolb');
   userEvent.click(screen.getByRole('button', { name: 'Sign Up' }));
 }
 
@@ -25,6 +24,18 @@ describe('MailerLiteForm', () => {
 
   afterEach(() => {
     jest.restoreAllMocks();
+  });
+
+  test('asks for first name above last name and email, not phone', () => {
+    render(<MailerLiteForm />);
+
+    const fields = screen.getAllByRole('textbox');
+    expect(fields.map((field) => field.getAttribute('aria-label'))).toEqual([
+      'Email',
+      'First name',
+      'Last name',
+    ]);
+    expect(screen.queryByLabelText('Phone')).not.toBeInTheDocument();
   });
 
   test('shows a thank-you message after a new signup', async () => {

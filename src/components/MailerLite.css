@@ -43,8 +43,7 @@
 }
 
 .nl-form-body input[type='email'],
-.nl-form-body input[type='text'],
-.nl-form-body input[type='tel'] {
+.nl-form-body input[type='text'] {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
