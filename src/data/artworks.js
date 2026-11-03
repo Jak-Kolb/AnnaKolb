@@ -974,8 +974,8 @@ const artworks = [
   },
   {
     id: 163,
-    src: process.env.PUBLIC_URL + "/imgs/cars/Valhalla.png",
-    title: "Valhalla",
+    src: process.env.PUBLIC_URL + "/imgs/cars/valhalla.png",
+    title: "valhalla",
     category: "cars",
   }];
 
